@@ -1,0 +1,59 @@
+<!-- Cielo Arias April 22 2025-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 7 Project - JavaScript Functions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Week 7 Project - JavaScript Functions</h1>
+
+    <h2>Question:</h2>
+    <p><strong>What is the purpose of a function?</strong></p>
+    <p>A function is a reusable block of code that performs a specific task. Functions help in organizing code into modular pieces, making it easier to read, test, and maintain. They also help to avoid repetition of code by allowing you to call the same function multiple times wherever needed.</p>
+
+    <h2>JavaScript Exercises Calculate Average weekely gas</h2>
+
+    <script>
+    // 1. Ask the user for their name
+    let username = prompt("Enter your name?");
+
+    // 2. Ask the user for their FIRST weekly gas total
+    let weeklyGas = parseFloat(prompt("Enter your weekly gas total. Enter -1 when you are done."));
+
+    // 3. Function to calculate average weekly gas total
+    function calcGasAvg() {
+        // a. Initialize variables
+        let count = 0;
+        let total = 0;
+        /*let weeklyGas = 0;*/
+
+
+        // b. While loop to keep asking for input until user enters -1
+        while (weeklyGas !== -1) {
+            total += weeklyGas;    // Add to total
+            count++;               // Increment count
+
+            // Prompt again inside the loop
+            weeklyGas = parseFloat(prompt("Enter another weekly gas total. Type -1 to finish."));
+        }
+
+        // d. Return the average (total divided by count)
+        if (count === 0) {
+        return 0;
+      } else {
+        return total / count;
+      }
+    }
+
+    // 4. Call the function and assign to variable
+    let gas = calcGasAvg();
+
+    // 5. Output the result with confirm, showing two decimal places
+    confirm(username + "'s average weekly gas bill is $" + gas.toFixed(2));
+    </script>
+
+</body>
+</html>
